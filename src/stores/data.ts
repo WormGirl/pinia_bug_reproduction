@@ -14,6 +14,7 @@ export interface MenuState {
 
 export const useDataStore = defineStore('menu', {
   state: (): MenuState => {
+    // !start  make this out of useDataStore will work fine.
     const data = ref<Item[]>([]);
     const searchKey = ref('');
     const filterData = computed({
@@ -24,6 +25,7 @@ export const useDataStore = defineStore('menu', {
         data.value = val;
       }
     });
+    // !end
 
     return {
       data,
